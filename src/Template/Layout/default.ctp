@@ -45,8 +45,9 @@
         <?= $this->Html->component('jquery/dist/jquery.min', 'script') ?>
         <!-- Bootstrap 3.3.7 -->
         <?= $this->Html->component('bootstrap/dist/js/bootstrap.min', 'script') ?>
-        
 
+        <!-- moment -->
+        <?= $this->Html->component('moment/moment', 'script') ?>
         <!-- SlimScroll -->
         <?= $this->Html->component('jquery-slimscroll/jquery.slimscroll.min', 'script') ?>
         <!-- FastClick -->
