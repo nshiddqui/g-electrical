@@ -6,7 +6,7 @@ $(function () {
         format: 'yyyy-mm-dd'
     });
     $('input[datetimepicker]').datetimepicker({
-        format: 'YYYY-MM-DD'
+        format: 'YYYY-MM-DD HH:mm:ss'
     });
 
 });
