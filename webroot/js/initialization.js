@@ -4,5 +4,9 @@ $(function () {
     $('input[datepicker]').datepicker({
         autoclose: true,
         format: 'yyyy-mm-dd'
-    })
+    });
+    $('input[datetimepicker]').datetimepicker({
+        format: 'YYYY-MM-DD'
+    });
+
 });
