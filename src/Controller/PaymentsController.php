@@ -7,27 +7,25 @@ use DataTables\Controller\DataTablesAjaxRequestTrait;
 use Cake\Http\Exception\UnauthorizedException;
 
 /**
- * Reports Controller
+ * Payments Controller
  *
- * @property \App\Model\Table\ReportsTable $Reports
+ * @property \App\Model\Table\PaymentsTable $Payments
  *
- * @method \App\Model\Entity\Report[]|\Cake\Datasource\ResultSetInterface paginate($object = null, array $settings = [])
+ * @method \App\Model\Entity\Payment[]|\Cake\Datasource\ResultSetInterface paginate($object = null, array $settings = [])
  */
-class ReportsController extends AppController {
+class PaymentsController extends AppController {
 
     public function initialize() {
         parent::initialize();
         $this->loadComponent('DataTables.DataTables');
-        $this->DataTables->createConfig('Reports')
-                ->databaseColumn('Reports.id')
+        $this->DataTables->createConfig('Payments')
+                ->databaseColumn('Payments.id')
                 ->queryOptions([
-                    'contain' => ['Workers', 'Locations', 'Users']
+                    'contain' => ['Workers', 'Users']
                 ])
                 ->column('Users.client_name', ['label' => 'User Name'])
                 ->column('Workers.name', ['label' => 'Worker Name'])
-                ->column('Locations.address', ['label' => 'Location'])
-                ->column('Reports.start_time', ['label' => 'Job Name'])
-                ->column('Reports.end_time', ['label' => 'Job Name'])
+                ->column('Payments.amount', ['label' => 'Amount'])
                 ->column('actions', ['label' => 'Actions', 'database' => false]);
     }
 
@@ -46,7 +44,7 @@ class ReportsController extends AppController {
             throw new UnauthorizedException(__('You are not alowed to access this page'));
         }
 
-        $this->DataTables->setViewVars('Reports');
+        $this->DataTables->setViewVars('Payments');
     }
 
     /**
@@ -58,25 +56,24 @@ class ReportsController extends AppController {
         if (!in_array($this->Auth->user('role'), [1, 2])) {
             throw new UnauthorizedException(__('You are not alowed to access this page'));
         }
-        $report = $this->Reports->newEntity();
+        $payment = $this->Payments->newEntity();
         if ($this->request->is('post')) {
-            $report = $this->Reports->patchEntity($report, $this->request->getData());
-            if ($this->Reports->save($report)) {
-                $this->Flash->success(__('The report has been saved.'));
+            $payment = $this->Payments->patchEntity($payment, $this->request->getData());
+            if ($this->Payments->save($payment)) {
+                $this->Flash->success(__('The payment has been saved.'));
 
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error(__('The report could not be saved. Please, try again.'));
+            $this->Flash->error(__('The payment could not be saved. Please, try again.'));
         }
-        $workers = $this->Reports->Workers->find('list', ['limit' => 200]);
-        $locations = $this->Reports->Locations->find('list', ['limit' => 200]);
-        $this->set(compact('report', 'workers', 'locations'));
+        $workers = $this->Payments->Workers->find('list', ['limit' => 200]);
+        $this->set(compact('payment', 'workers'));
     }
 
     /**
      * Edit method
      *
-     * @param string|null $id Report id.
+     * @param string|null $id Payment id.
      * @return \Cake\Http\Response|null Redirects on successful edit, renders view otherwise.
      * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
      */
@@ -84,27 +81,26 @@ class ReportsController extends AppController {
         if (!in_array($this->Auth->user('role'), [1, 2])) {
             throw new UnauthorizedException(__('You are not alowed to access this page'));
         }
-        $report = $this->Reports->get($id, [
+        $payment = $this->Payments->get($id, [
             'contain' => [],
         ]);
         if ($this->request->is(['patch', 'post', 'put'])) {
-            $report = $this->Reports->patchEntity($report, $this->request->getData());
-            if ($this->Reports->save($report)) {
-                $this->Flash->success(__('The report has been saved.'));
+            $payment = $this->Payments->patchEntity($payment, $this->request->getData());
+            if ($this->Payments->save($payment)) {
+                $this->Flash->success(__('The payment has been saved.'));
 
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error(__('The report could not be saved. Please, try again.'));
+            $this->Flash->error(__('The payment could not be saved. Please, try again.'));
         }
-        $workers = $this->Reports->Workers->find('list', ['limit' => 200]);
-        $locations = $this->Reports->Locations->find('list', ['limit' => 200]);
-        $this->set(compact('report', 'workers', 'locations'));
+        $workers = $this->Payments->Workers->find('list', ['limit' => 200]);
+        $this->set(compact('payment', 'workers'));
     }
 
     /**
      * Delete method
      *
-     * @param string|null $id Report id.
+     * @param string|null $id Payment id.
      * @return \Cake\Http\Response|null Redirects to index.
      * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
      */
@@ -113,11 +109,11 @@ class ReportsController extends AppController {
             throw new UnauthorizedException(__('You are not alowed to access this page'));
         }
         $this->request->allowMethod(['post', 'delete']);
-        $report = $this->Reports->get($id);
-        if ($this->Reports->delete($report)) {
-            $this->Flash->success(__('The report has been deleted.'));
+        $payment = $this->Payments->get($id);
+        if ($this->Payments->delete($payment)) {
+            $this->Flash->success(__('The payment has been deleted.'));
         } else {
-            $this->Flash->error(__('The report could not be deleted. Please, try again.'));
+            $this->Flash->error(__('The payment could not be deleted. Please, try again.'));
         }
 
         return $this->redirect(['action' => 'index']);
