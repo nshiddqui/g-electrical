@@ -70,8 +70,8 @@
                     </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li><?= $this->Html->link('<i class="fa fa-circle-o"></i> New Location', ['controller' => 'riders', 'action' => 'add'], ['escape' => false]) ?></li>
-                    <li><?= $this->Html->link('<i class="fa fa-circle-o"></i> List Locations', ['controller' => 'riders', 'action' => 'index'], ['escape' => false]) ?></li>
+                    <li><?= $this->Html->link('<i class="fa fa-circle-o"></i> New Location', ['controller' => 'locations', 'action' => 'add'], ['escape' => false]) ?></li>
+                    <li><?= $this->Html->link('<i class="fa fa-circle-o"></i> List Locations', ['controller' => 'locations', 'action' => 'index'], ['escape' => false]) ?></li>
                 </ul>
             </li>
         <?php } ?>
