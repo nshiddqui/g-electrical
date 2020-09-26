@@ -1,4 +1,5 @@
 <?php
+
 /**
  * CakePHP(tm) : Rapid Development Framework (https://cakephp.org)
  * Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
@@ -12,7 +13,6 @@
  * @since         0.10.8
  * @license       https://opensource.org/licenses/mit-license.php MIT License
  */
-
 /*
  * Configure paths required to find CakePHP + general filepath constants
  */
@@ -184,13 +184,17 @@ ServerRequest::addDetector('tablet', function ($request) {
  * @link https://book.cakephp.org/3.0/en/core-libraries/internationalization-and-localization.html#parsing-localized-datetime-data
  */
 Type::build('time')
-    ->useImmutable();
+        ->useImmutable();
 Type::build('date')
-    ->useImmutable();
+        ->useImmutable();
 Type::build('datetime')
-    ->useImmutable();
+        ->useImmutable();
 Type::build('timestamp')
-    ->useImmutable();
+        ->useImmutable();
+Cake\I18n\FrozenDate::setJsonEncodeFormat('dd-MM-yyyy');
+Cake\I18n\FrozenTime::setJsonEncodeFormat('dd-MM-yyyy hh:mm a');
+Cake\I18n\FrozenDate::setToStringFormat('dd-MM-yyyy');
+Cake\I18n\FrozenTime::setToStringFormat('dd-MM-yyyy hh:mm a');
 
 /*
  * Custom Inflector rules, can be set to correctly pluralize or singularize
