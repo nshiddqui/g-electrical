@@ -10,7 +10,7 @@ foreach ($results as $result) {
         h($result->account_number),
         h($result->ifsc_code),
         h($result->date_of_birth),
-        !empty($result['job']) ? $result['job']->name : '',
+        $result['job']->name,
         h($result->start_date),
         h($result->experience),
         h($result->address),
