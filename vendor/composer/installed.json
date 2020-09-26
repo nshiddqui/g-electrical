@@ -62,6 +62,42 @@
         ]
     },
     {
+        "name": "allanmcarvalho/cakephp-datatables",
+        "version": "1.7.0",
+        "version_normalized": "1.7.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/allanmcarvalho/cakephp-datatables.git",
+            "reference": "8143a51187e520812726b40f322a4c677ddaf9b3"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/allanmcarvalho/cakephp-datatables/zipball/8143a51187e520812726b40f322a4c677ddaf9b3",
+            "reference": "8143a51187e520812726b40f322a4c677ddaf9b3",
+            "shasum": ""
+        },
+        "require": {
+            "cakephp/cakephp": ">=3.7.0 <4.0.0",
+            "php": ">=5.5.9"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "*"
+        },
+        "time": "2020-08-07T20:08:08+00:00",
+        "type": "cakephp-plugin",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "DataTables\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "description": "DataTables plugin for CakePHP 3.x"
+    },
+    {
         "name": "aptoma/twig-markdown",
         "version": "2.0.0",
         "version_normalized": "2.0.0.0",
