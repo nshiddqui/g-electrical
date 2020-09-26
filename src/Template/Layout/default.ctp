@@ -23,6 +23,8 @@
         <?= $this->Html->component('select2/dist/css/select2.min', 'css') ?>
         <!-- bootstrap datepicker -->
         <?= $this->Html->component('bootstrap-datepicker/dist/css/bootstrap-datepicker.min') ?>
+        <!-- bootstrap datetimepicker master -->
+        <?= $this->Html->component('bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min') ?>
         <!-- Theme style -->
         <?= $this->Html->css('AdminLTE.min') ?>
         <!-- AdminLTE Skins. Choose a skin from the css/skins
@@ -53,6 +55,9 @@
         <?= $this->Html->component('select2/dist/js/select2.full.min', 'script') ?>
         <!-- bootstrap datepicker -->
         <?= $this->Html->component('bootstrap-datepicker/dist/js/bootstrap-datepicker.min', 'script') ?>
+        <!-- bootstrap datetimepicker master -->
+        <?= $this->Html->component('bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min', 'script') ?>
+
         <!-- Data Table -->
         <?= $this->Html->component('DataTables/datatables.min', 'script') ?>
         <!-- AdminLTE App -->
