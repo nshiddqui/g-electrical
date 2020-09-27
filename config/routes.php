@@ -58,7 +58,7 @@ Router::scope('/', function (RouteBuilder $routes) {
      */
     $routes->applyMiddleware('csrf');
 
-    $routes->connect('/', ['controller' => 'Dashboard', 'action' => 'index']);
+    $routes->connect('/', ['controller' => 'users', 'action' => 'login']);
 
 
     /**
