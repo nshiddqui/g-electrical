@@ -1,9 +1,41 @@
-<?php $companyName = 'Gujarat Electricals'; ?>
+<?php $companyName = 'Gujrat Electrical - All electrical proplems solutoin'; ?>
 <!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="robots" content="noindex,nofollow">
+        <meta name="Description" CONTENT="Author: Nazim, We are providing house wiring industrial all wiring  and panel fitting and cc tv camera installation , we have all facilities which you want from electricians.">
+        <meta name="Keywords" content="gujarat electrical, gujarat, electrical, cctv camera, panel fitting, house wiring">        
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org/",
+                "@type": "Review",
+                "itemReviewed": {
+                    "@type": "Electricals",
+                    "image": "<?= $this->Url->build('/img/logo.png') ?>",
+                    "name": "Gujarat Electrical",
+                    "telephone": "9347616480",
+                    "address" :{
+                        "@type": "PostalAddress",
+                        "streetAddress": "A 34, Ahmednagar, Manubar Chokdi",
+                        "addressLocality": "Bharuch",
+                        "addressRegion": "Gujarat",
+                        "postalCode": "392012",
+                        "addressCountry": "IN"
+                    }
+                },
+                "reviewRating": {
+                "@type": "Rating",
+                "ratingValue": "4"
+                },
+                "name": "Gujarat Electrical.",
+                "author": {
+                    "@type": "Electricals",
+                    "name": "Gujarat Electrical."
+                    }
+            }
+        </script>        
         <?= $this->fetch('meta') ?>
         <title>
             <?= $companyName ?>:
