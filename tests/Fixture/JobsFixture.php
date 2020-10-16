@@ -16,7 +16,7 @@ class JobsFixture extends TestFixture
     // @codingStandardsIgnoreStart
     public $fields = [
         'id' => ['type' => 'integer', 'length' => 11, 'unsigned' => false, 'null' => false, 'default' => null, 'comment' => '', 'autoIncrement' => true, 'precision' => null],
-        'name' => ['type' => 'integer', 'length' => 11, 'unsigned' => false, 'null' => false, 'default' => null, 'comment' => '', 'precision' => null, 'autoIncrement' => null],
+        'name' => ['type' => 'string', 'length' => 50, 'null' => false, 'default' => null, 'collate' => 'latin1_swedish_ci', 'comment' => '', 'precision' => null, 'fixed' => null],
         'created' => ['type' => 'datetime', 'length' => null, 'null' => false, 'default' => null, 'comment' => '', 'precision' => null],
         'modified' => ['type' => 'datetime', 'length' => null, 'null' => false, 'default' => null, 'comment' => '', 'precision' => null],
         '_constraints' => [
@@ -38,9 +38,9 @@ class JobsFixture extends TestFixture
         $this->records = [
             [
                 'id' => 1,
-                'name' => 1,
-                'created' => '2020-09-26 10:03:21',
-                'modified' => '2020-09-26 10:03:21',
+                'name' => 'Lorem ipsum dolor sit amet',
+                'created' => '2020-09-26 11:55:14',
+                'modified' => '2020-09-26 11:55:14',
             ],
         ];
         parent::init();

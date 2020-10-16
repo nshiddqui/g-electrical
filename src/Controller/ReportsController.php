@@ -26,8 +26,9 @@ class ReportsController extends AppController {
                 ->column('Users.client_name', ['label' => 'User Name'])
                 ->column('Workers.name', ['label' => 'Worker Name'])
                 ->column('Locations.address', ['label' => 'Location'])
-                ->column('Reports.start_time', ['label' => 'Job Name'])
-                ->column('Reports.end_time', ['label' => 'Job Name'])
+                ->column('Reports.start_time', ['label' => 'Start Time'])
+                ->column('Reports.end_time', ['label' => 'End Time'])
+                ->column('Reports.notes', ['label' => 'Notes'])
                 ->column('actions', ['label' => 'Actions', 'database' => false]);
     }
 

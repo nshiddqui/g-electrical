@@ -20,6 +20,7 @@ $this->assign('title', 'Reports');
         echo $this->Form->control('location_id', ['label' => 'Location', 'options' => $locations]);
         echo $this->Form->control('start_time', ['type' => 'text', 'datetimepicker' => true]);
         echo $this->Form->control('end_time', ['type' => 'text', 'datetimepicker' => true]);
+        echo $this->Form->control('notes');
         ?>
     </div>
     <!-- /.box-body -->

@@ -6,7 +6,6 @@ use Cake\ORM\Query;
 use Cake\ORM\RulesChecker;
 use Cake\ORM\Table;
 use Cake\Validation\Validator;
-use Cake\Network\Session;
 
 /**
  * Reports Model
@@ -77,6 +76,10 @@ class ReportsTable extends Table {
                 ->dateTime('end_time')
                 ->requirePresence('end_time', 'create')
                 ->notEmptyDateTime('end_time');
+
+        $validator
+                ->scalar('notes')
+                ->allowEmptyString('notes');
 
         return $validator;
     }

@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Model\Entity;
 
 use Cake\ORM\Entity;
@@ -12,6 +13,7 @@ use Cake\ORM\Entity;
  * @property \Cake\I18n\FrozenTime $end_time
  * @property int $worker_id
  * @property int $location_id
+ * @property string|null $notes
  * @property \Cake\I18n\FrozenTime $created
  * @property \Cake\I18n\FrozenTime $modified
  *
@@ -19,8 +21,8 @@ use Cake\ORM\Entity;
  * @property \App\Model\Entity\Worker $worker
  * @property \App\Model\Entity\Location $location
  */
-class Report extends Entity
-{
+class Report extends Entity {
+
     /**
      * Fields that can be mass assigned using newEntity() or patchEntity().
      *
@@ -36,10 +38,12 @@ class Report extends Entity
         'end_time' => true,
         'worker_id' => true,
         'location_id' => true,
+        'notes' => true,
         'created' => true,
         'modified' => true,
         'user' => true,
         'worker' => true,
         'location' => true,
     ];
+
 }
